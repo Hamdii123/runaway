@@ -1,0 +1,51 @@
+/* CSS */
+.latest-events-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    
+    color: rgb(255, 255, 255);
+    background: rgba( 0, 0, 0, 0.7 );
+   
+  }
+  
+  .video-thumbnail {
+    width: 70%;
+    max-width: 640px; /* Adjust based on your layout needs */ 
+    
+    
+  }
+  .event-content{
+  
+  }
+  
+  .event-content h2 {
+    margin-bottom: 10px;
+  }
+  
+  .event-content p {
+    margin-bottom: 20px;
+  }
+  
+  .learn-more-button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .latest-events-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .video-thumbnail {
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+  }
+  

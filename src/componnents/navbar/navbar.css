@@ -1,0 +1,98 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    transition: top 0.3s ease-in-out; /* Transition douce pour la propriété top */
+    background: rgba( 255, 255, 255, 0.1 );
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 1px );
+    /* border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+  }
+  
+  .navbar.hidden {
+    top: -100px; /* Cache le navbar en déplaçant vers le haut */
+  }
+  
+  .navbar.visible {
+    top: 0; /* Affiche le navbar en revenant à sa position initiale */
+  }
+  
+  .navbar .logo img {
+    height: 70px;
+    /* Hauteur du logo */
+  }
+  
+  .nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Pour aligner les éléments verticalement */
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links ul {
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-right: 20px; /* Marge entre les éléments de menu */
+  }
+  
+  .nav-links li:last-child {
+    margin-right: 0; /* Aucune marge à droite pour le dernier élément de menu */
+  }
+  
+  .nav-links li a {
+    color: rgb(243, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Styles réactifs pour les écrans de taille moyenne et inférieure */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      padding: 10px;
+      flex-direction: column;
+      align-items: flex-start; /* Aligner les éléments à gauche */
+    }
+  
+    .nav-links {
+      display: none; /* Masquer les liens du menu */
+      width: 100%;
+      text-align: center; 
+      align-items: center;/* Centrer les éléments de menu */
+    }
+  
+    .navbar.visible {
+      top: 0; /* Toujours afficher la barre de navigation en version mobile */
+    }
+  
+    .nav-links.visible {
+      display: flex; /* Afficher les liens du menu */
+      margin-top: 10px;
+      justify-content: center; /* Centrer les éléments de menu */
+    }
+  
+    .nav-links ul {
+      flex-direction: row; /* Afficher les éléments de menu dans une rangée */
+    }
+  
+    .nav-links li {
+      font-family: Arial, Helvetica, sans-serif;
+      margin-right: 30px; /* Réduire la marge entre les éléments de menu */
+      margin-bottom: 0;
+      /* Supprimer la marge inférieure */
+    }
+  }
+  
