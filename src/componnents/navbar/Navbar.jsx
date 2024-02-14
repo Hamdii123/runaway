@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import logo from './5B591644-8B1C-4CAF-9B08-C236DA17CE75-removebg-preview.png'; // Importez votre logo
-import './navbar.css'
+import './navbar.css'; // Importez le fichier CSS pour le style
+
 const Navbar = () => {
-  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
-  const [visible, setVisible] = useState(true);
+  const [isAffixed, setIsAffixed] = useState(false);
+  const [isMenuActive, setIsMenuActive] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 600);
-      setPrevScrollPos(currentScrollPos);
+      if (window.pageYOffset > 50) {
+        setIsAffixed(true);
+        console.log("OK");
+      } else {
+        setIsAffixed(false);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -17,18 +20,32 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [prevScrollPos]);
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuActive(!isMenuActive);
+    console.log("Clicked menu");
+  };
 
   return (
-    <nav className={`navbar ${visible ? 'visible' : 'hidden'}`}>
-      <div className="logo">
-        <img src={logo} alt="Logo" />
-      </div>
-      <div className={`nav-links ${visible ? 'visible' : 'hidden'}`}>
-        <ul>
-          <li><a href="#">Item 1</a></li>
-          <li><a href="#">Item 2</a></li>
-        </ul>
+    <nav className={isAffixed ? "nav affix" : "nav"}>
+      <div className="container">
+        <div className="logo">
+          <a href="#">Your Logo</a>
+        </div>
+        <div id="mainListDiv" className={isMenuActive ? "main_list show_list" : "main_list"}>
+          <ul className="navlinks">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <span className={isMenuActive ? "navTrigger active" : "navTrigger"} onClick={toggleMenu}>
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
       </div>
     </nav>
   );

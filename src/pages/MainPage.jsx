@@ -12,7 +12,7 @@ const MainPage = () => {
   return (
     <div>
       
-        {/* <Navbar/> */}
+        <Navbar/>
         <Jambotron/>
         <Accordion/>
         <YoutubePlayer/>
