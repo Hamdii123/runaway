@@ -1,12 +1,15 @@
 import './App.css';
-import Team from './componnents/team/Team';
-import YoutubePlayer from './componnents/youtubeplayer/YoutubePlayer';
+
+
+
 import MainPage from './pages/MainPage';
+import Services from './pages/Services';
 
 function App() {
   return (
     <>
 <MainPage/>
+
       </>
   );
 }
