@@ -35,10 +35,9 @@ const Navbar = () => {
         </div>
         <div id="mainListDiv" className={isMenuActive ? "main_list show_list" : "main_list"}>
           <ul className="navlinks">
+          <li><a href="#">Services</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            
           </ul>
         </div>
         <span className={isMenuActive ? "navTrigger active" : "navTrigger"} onClick={toggleMenu}>
